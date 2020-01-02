@@ -20,7 +20,7 @@ router.get('/', auth, async (req, res) => {
     }
 })
 
-// @route GET api/auth
+// @route POST api/auth
 // @desc Authentication user & get token
 // @access public
 router.post('/', [
