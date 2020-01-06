@@ -8,24 +8,23 @@ import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/routing/PrivateRoute';
 // Redux
-import { Provider } from "react-redux";
+import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 
-
 import './App.css';
 
 if (localStorage.token) {
-  setAuthToken(localStorage.token)
+  setAuthToken(localStorage.token);
 }
 
 const App = () => {
   useEffect(() => {
-    store.dispatch(loadUser())
-  }, [])
+    store.dispatch(loadUser());
+  }, []);
 
-  return(
+  return (
     <Provider store={store}>
       <Router>
         <Fragment>
@@ -42,7 +41,7 @@ const App = () => {
         </Fragment>
       </Router>
     </Provider>
-  )
-}
+  );
+};
 
 export default App;
